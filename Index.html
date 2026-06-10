@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAMILA</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+background:linear-gradient(
+135deg,
+#c8a2ff,
+#b57eff,
+#d8b4fe,
+#e9d5ff
+);
+}
+
+body::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+backdrop-filter:blur(25px);
+}
+
+.player{
+position:relative;
+width:340px;
+padding:25px;
+border-radius:35px;
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(25px);
+box-shadow:
+0 8px 32px rgba(0,0,0,.25);
+text-align:center;
+z-index:2;
+}
+
+.cover{
+width:100%;
+height:290px;
+border-radius:25px;
+object-fit:cover;
+box-shadow:0 0 25px rgba(255,255,255,.3);
+}
+
+.song{
+margin-top:18px;
+font-size:28px;
+font-weight:700;
+color:white;
+}
+
+.artist{
+margin-top:5px;
+color:#f5e9ff;
+font-size:15px;
+}
+
+.love{
+margin-top:10px;
+font-size:14px;
+color:white;
+opacity:.9;
+}
+
+.controls{
+margin-top:25px;
+display:flex;
+justify-content:center;
+gap:30px;
+font-size:35px;
+color:white;
+}
+
+.heart{
+position:absolute;
+font-size:25px;
+animation:float 8s linear infinite;
+opacity:.7;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120px);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="player">
+
+<img class="cover"
+src="Camila.jpg"
+alt="Portada">
+
+<div class="song">
+Te amo mucho 💗✨
+</div>
+
+<div class="artist">
+Mi canción favorita eres tú
+</div>
+
+<div class="love">
+Contigo encontré una tranquilidad que no sabía que necesitaba.
+</div>
+
+
+
+<div class="controls">
+<audio controls autoplay loop style="width:100%; margin-top:20px;">
+    <source src="Tú y Yo .m4a" type="audio/mp4">
+</audio>
+</div>
+
+</div>
+<script>
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML=Math.random()>0.5?"💜":"🤍";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=
+(5+Math.random()*7)+"s";
+
+heart.style.fontSize=
+(15+Math.random()*25)+"px";
+
+document.body.appendChild(heart);
+
+}
+
+</script>
+
+</body>
+</html>
